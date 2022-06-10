@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels"
+             x:Class="HealthSafetyAppLite.Views.SignupPage">
+    <ScrollView>
+        <StackLayout Padding="40" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand"
+                     x:DataType="vm:SignUpViewModel">
+      
+        <Label Text="Name:"/>
+        <Entry x:Name="txtUsername" Placeholder="Name" Text="{Binding Name}"/>
+        <Label Text="Organization"/>
+        <Entry x:Name="txtOrganization" Placeholder="Organization"
+               Text="{Binding Organizatiion}"/>
+        <Label Text="Position"/>
+        <Entry x:Name="txtPosition" Placeholder="Position"
+               Text="{Binding Position}"/>
+        <Label Text="Industry"/>
+        <Entry x:Name="txtIndustry" Placeholder="Industry"
+               Text="{Binding Industry}"/>
+        <Label Text="Qualification"/>
+        <Entry x:Name="txtQualification" Placeholder="Qualification" Text="{Binding Qualification}"/>
+        <Label Text="D.O.B"/>
+        <DatePicker Date="{Binding DOB}"/>
+        <Label Text="Email"/>
+        <Entry x:Name="txtEmail" Placeholder="Email" Text="{Binding Email}"/>
+        <Label Text="Password:"/>
+        <Entry x:Name="txtPassword" IsPassword="True" Placeholder="Password" Text="{Binding Password}"/>
+        <Label Text="Confirm Password:"/>
+        <Entry x:Name="txtConfirmPassword" IsPassword="True" Placeholder="Password" Text="{Binding ConfirmPassword}"/>
+        <Label Text="Telephone"/>
+        <Entry x:Name="txtTelephone" Placeholder="Telephone" Text="{Binding Telephone}"/>
+            <Button Text="SignUP" Command="{Binding SignUpCommand}"/>
+       
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

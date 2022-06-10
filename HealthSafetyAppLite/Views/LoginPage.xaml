@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthSafetyAppLite.Views.LoginPage">
+    <StackLayout Padding="40" VerticalOptions="Center"
+                     HorizontalOptions="FillAndExpand">
+        <Label Text="Username:"/>
+        <Entry x:Name="txtUsername" Placeholder="Username"
+               Text="{Binding UserName}"/>
+        <Label Text="Password:"/>
+        <Entry x:Name="txtPassword" IsPassword="True" Placeholder="Password"
+               Text="{Binding Password}"/>
+        <Button Text="Login" Command="{Binding LogInCommand}"/>
+        <Label Text="Register" HorizontalOptions="Center">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SignUpPageCommand}"/>
+            </Label.GestureRecognizers>
+        </Label>
+    </StackLayout>
+</ContentPage>
