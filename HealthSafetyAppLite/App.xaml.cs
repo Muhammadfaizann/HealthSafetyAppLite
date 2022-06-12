@@ -1,8 +1,11 @@
 ﻿using HealthSafetyAppLite.Views;
 using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+[assembly: ExportFont("Poppins-Regular.tff", Alias = "PoppinsRegular")]
+[assembly: ExportFont("Poppins-Bold.ttf", Alias = "PoppinsBold")]
 namespace HealthSafetyAppLite
 {
     public partial class App : Application
@@ -10,8 +13,16 @@ namespace HealthSafetyAppLite
         public App()
         {
             InitializeComponent();
-
-            MainPage = new LoginPage();
+            var user = Preferences.Get("UserName", "");
+            if (string.IsNullOrEmpty(user))
+            {
+                MainPage = new SignupPage();
+            }
+            else
+            {
+                MainPage = new LandingPage();
+            }
+           
         }
 
         protected override void OnStart()

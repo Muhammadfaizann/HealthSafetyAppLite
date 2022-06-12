@@ -1,21 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels"
+             xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels" 
              xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
-             x:Class="HealthSafetyAppLite.Views.SignupPage">
-   
-        <StackLayout Padding="40" VerticalOptions="Center"
+             x:Class="HealthSafetyAppLite.Views.SignupPageSecond">
+    <StackLayout Padding="40" VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand"
                      x:DataType="vm:SignUpViewModel">
 
-        <controls:RoundedEntry PlaceHolder="Name" Text="{Binding Name}"/>
-        <controls:RoundedEntry PlaceHolder="Email" Text="{Binding Email}"/>
-        <controls:RoundedEntry PlaceHolder="Password" Text="{Binding Password}"/>
-        <controls:RoundedEntry PlaceHolder="Confirm Password" Text="{Binding ConfirmPassword}"/>
-        <controls:RoundedEntry PlaceHolder="Telephone Number" Text="{Binding Telephone}"/>
+        <controls:RoundedEntry PlaceHolder="Organization" Text="{Binding Organizatiion}"/>
+        <controls:RoundedEntry PlaceHolder="Position" Text="{Binding Position}"/>
+        <controls:RoundedEntry PlaceHolder="Industry" Text="{Binding Industry}"/>
+        <controls:RoundedEntry PlaceHolder="Qualification" Text="{Binding Qualification}"/>
+        <Frame BackgroundColor="White" Padding="0"
+               CornerRadius="50">
+            <DatePicker Date="{Binding DOB}"/>
+        </Frame>
+        <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+            <CheckBox VerticalOptions="Center"/>
+            <Label Text="I accept terms and condtion" VerticalOptions="Center"/>
+        </StackLayout>
 
-        <Button Text="Next" Command="{Binding SecondSignupPageCommand}"
+        <Button Text="SING UP" Command="{Binding SignUpCommand}"
                     BackgroundColor="{StaticResource HsGreen}" Margin="60,60,60,0"
                     CornerRadius="30"
                     TextColor="White"/>
@@ -26,5 +32,4 @@
             <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>
         </Grid>
     </StackLayout>
-   
 </ContentPage>

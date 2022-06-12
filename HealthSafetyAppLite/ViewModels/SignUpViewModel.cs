@@ -1,5 +1,7 @@
-﻿using HealthSafetyAppLite.Models;
+﻿using HealthSafetyAppLite.Helper;
+using HealthSafetyAppLite.Models;
 using HealthSafetyAppLite.Services;
+using HealthSafetyAppLite.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,10 +15,16 @@ namespace HealthSafetyAppLite.ViewModels
         UserService service = new UserService();
         public INavigation Navigation { get; set; }
         public ICommand SignUpCommand { get; set; }
+        public ICommand SecondSignupPageCommand { get; set; }
         public SignUpViewModel(INavigation navigation)
         {
             Navigation = navigation;
             SignUpCommand = new Command( () => { SignUp(); });
+
+            SecondSignupPageCommand = new Command(async () =>
+              {
+                  await Navigation.PushModalAsync(new SignupPageSecond());
+              });
         }
 
         private async void SignUp()
@@ -27,14 +35,25 @@ namespace HealthSafetyAppLite.ViewModels
             {
                 IsBusy = true;
                 string[] inputs = { _name, _organization, _industry, _position, _qualification, _password, _confirmPassword, _telephone, _email };
-                foreach (var input in inputs)
-                {
-                    if (string.IsNullOrEmpty(input))
-                    {
-                      await  App.Current.MainPage.DisplayAlert("Attention", "Please Enter the Required Fields", "Ok");
-                        return;
-                    }
+               foreach (var input in inputs)
+               {
+                   if (string.IsNullOrEmpty(input))
+                   {
+                     await  App.Current.MainPage.DisplayAlert("Attention", "Please Enter the Required Fields", "Ok");
+                       return;
+                   }
 
+               }
+                if (!EmailValidator.EmailIsValid(_email))
+                {
+                    await App.Current.MainPage.DisplayAlert("Attention", "Please Enter a Valid Email", "Ok");
+                    return;
+                }
+
+                if (_password.Length < 8)
+                {
+                    await App.Current.MainPage.DisplayAlert("Attention", "Enter Mininum 8 Characters", "Ok");
+                    return;
                 }
                 if (_password != _confirmPassword)
                 {

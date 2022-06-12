@@ -1,20 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels"
+             xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
              x:Class="HealthSafetyAppLite.Views.LoginPage">
-    <StackLayout Padding="40" VerticalOptions="Center"
-                     HorizontalOptions="FillAndExpand">
-        <Label Text="Username:"/>
-        <Entry x:Name="txtUsername" Placeholder="Username"
-               Text="{Binding UserName}"/>
-        <Label Text="Password:"/>
-        <Entry x:Name="txtPassword" IsPassword="True" Placeholder="Password"
-               Text="{Binding Password}"/>
-        <Button Text="Login" Command="{Binding LogInCommand}"/>
-        <Label Text="Register" HorizontalOptions="Center">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Command="{Binding SignUpPageCommand}"/>
-            </Label.GestureRecognizers>
-        </Label>
+    <StackLayout Padding="40,80,40,40" VerticalOptions="Start"
+                     HorizontalOptions="FillAndExpand" x:DataType="vm:LoginViewModel">
+        <Label Text="Hello" FontSize="40" HorizontalOptions="Start"
+               FontFamily="PoppinsBold" TextColor="{StaticResource HsGreen}"
+               FontAttributes="Bold"/>
+        <Label Text="Sign in to your account" TextColor="{StaticResource HsBlack}"
+               FontFamily="PoppinsRegular"/>
+        <StackLayout>
+            <controls:RoundedEntry Margin="0,40,0,0" VerticalOptions="Center" 
+                                   PlaceHolder="Email"
+                                   Text="{Binding UserName}"/>
+            <controls:RoundedEntry Margin="0,20,0,0" PlaceHolder="Password"
+                                   Text="{Binding Password}"/>
+            <Label Text="Forgot your password?" TextColor="{StaticResource HsBlack}"
+               HorizontalOptions="End"/>
+        </StackLayout>
+        <StackLayout Margin="0,40,0,0">
+            <Button BackgroundColor="{StaticResource HsGreen}" Text="SIGN IN" CornerRadius="30"
+                    HorizontalOptions="CenterAndExpand" WidthRequest="120" TextColor="White"
+                    HeightRequest="40" Command="{Binding LogInCommand}"/>
+            <Label HorizontalOptions="Center" Margin="0,20,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Don't have an account?" TextColor="{StaticResource HsBlack}"/>
+                        <Span Text=" "/>
+                        <Span Text="Create" TextColor="Red">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+        <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
+              Margin="0,30,0,0">
+            <Frame Grid.Column="0" BackgroundColor="Red" CornerRadius="50"  ></Frame>
+            <Frame Grid.Column="1" BackgroundColor="Yellow" CornerRadius="50"  ></Frame>
+            <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>
+        </Grid>
     </StackLayout>
 </ContentPage>

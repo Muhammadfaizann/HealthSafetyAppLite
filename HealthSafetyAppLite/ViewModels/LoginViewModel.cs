@@ -21,6 +21,12 @@ namespace HealthSafetyAppLite.ViewModels
                 return;
             try
             {
+                IsBusy = true;
+                if (string.IsNullOrEmpty(_userName) && string.IsNullOrEmpty(_password))
+                {
+                  await  App.Current.MainPage.DisplayAlert("Attention", "Please Enter The All Fields", "OK");
+                    return;
+                }
                 UserService service = new UserService();
                 Result = await service.LoginUser(_userName, _password);
                 if (Result)
