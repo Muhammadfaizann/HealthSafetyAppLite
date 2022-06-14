@@ -16,7 +16,7 @@ namespace HealthSafetyAppLite
             var user = Preferences.Get("UserName", "");
             if (string.IsNullOrEmpty(user))
             {
-                MainPage = new SignupPage();
+                MainPage = new LoginPage();
             }
             else
             {

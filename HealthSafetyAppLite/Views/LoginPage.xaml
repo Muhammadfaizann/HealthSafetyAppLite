@@ -31,7 +31,7 @@
                         <Span Text=" "/>
                         <Span Text="Create" TextColor="Red">
                             <Span.GestureRecognizers>
-                                <TapGestureRecognizer />
+                                <TapGestureRecognizer Command="{Binding SignUpPageCommand}"/>
                             </Span.GestureRecognizers>
                         </Span>
                     </FormattedString>

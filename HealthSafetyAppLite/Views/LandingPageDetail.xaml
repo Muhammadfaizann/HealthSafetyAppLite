@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HealthSafetyAppLite.Views.LandingPageDetail"
+             Title="Health and Safety topics"
+             BackgroundColor="LightGray">
+    <StackLayout>
+        <CollectionView ItemsSource="{Binding LandingList}">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="5" Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="LightBlue" CornerRadius="30"
+                           Margin="10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image/>
+                            <Label Text="{Binding Title}"
+                                   TextColor="White"
+                                   FontAttributes="Bold"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.Footer>
+               
+                    <StackLayout>
+                        <Label HorizontalOptions="Center"
+                               Margin="0">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="--------------------"/>
+                                    <Span Text="Output Folders"/>
+                                    <Span Text="--------------------"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    <Frame BackgroundColor="LightBlue" CornerRadius="30"
+                           Margin="10,0,10,10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image/>
+                            <Label Text="PDFS OUTPUT FOLDER"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   Margin="30,0,0,0"/>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="LightBlue" CornerRadius="30"
+                           Margin="10,0,10,10">
+                        <StackLayout Orientation="Horizontal">
+                            <Image/>
+                            <Label Text="DRAFTS OUT FOLDER"
+                                   TextColor="White"
+                                   FontAttributes="Bold"
+                                   HorizontalOptions="Center"
+                                   Margin="30,0,0,0"/>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+               
+            </CollectionView.Footer>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
