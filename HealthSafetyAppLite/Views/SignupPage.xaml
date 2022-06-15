@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
+             BackgroundImage="background.png"
              x:Class="HealthSafetyAppLite.Views.SignupPage">
    
         <StackLayout Padding="40" VerticalOptions="Center"
@@ -11,16 +13,17 @@
 
         <controls:RoundedEntry PlaceHolder="Name" Text="{Binding Name}"/>
         <controls:RoundedEntry PlaceHolder="Email" Text="{Binding Email}"/>
-        <controls:RoundedEntry PlaceHolder="Password" Text="{Binding Password}"/>
-        <controls:RoundedEntry PlaceHolder="Confirm Password" Text="{Binding ConfirmPassword}"/>
+        <controls:RoundedEntry PlaceHolder="Password" Text="{Binding Password}" IsPassword="True"/>
+        <controls:RoundedEntry PlaceHolder="Confirm Password" Text="{Binding ConfirmPassword}" IsPassword="True"/>
         <controls:RoundedEntry PlaceHolder="Telephone Number" Text="{Binding Telephone}"/>
 
         <Button Text="Next" Command="{Binding SecondSignupPageCommand}"
-                    BackgroundColor="{StaticResource HsGreen}" Margin="60,60,60,0"
-                    CornerRadius="30"
+                    BackgroundColor="{StaticResource HsGreen}" Margin="0,60,0,0"
+                    CornerRadius="20"
+                     FontAttributes="Bold"
                     TextColor="White"/>
-        <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
-              Margin="0,60,0,0" VerticalOptions="End">
+          <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
+              Margin="0,30,0,0">
             <Frame Grid.Column="0" BackgroundColor="Red" CornerRadius="50"  ></Frame>
             <Frame Grid.Column="1" BackgroundColor="Yellow" CornerRadius="50"  ></Frame>
             <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>

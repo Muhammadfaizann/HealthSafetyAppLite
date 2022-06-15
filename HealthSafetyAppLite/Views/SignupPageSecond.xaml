@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels" 
              xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
+             BackgroundImage="background.png"
              x:Class="HealthSafetyAppLite.Views.SignupPageSecond">
     <StackLayout Padding="40" VerticalOptions="Center"
                      HorizontalOptions="FillAndExpand"
