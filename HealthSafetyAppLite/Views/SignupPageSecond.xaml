@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels" 
              xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              BackgroundImage="background.png"
              x:Class="HealthSafetyAppLite.Views.SignupPageSecond">
     <StackLayout Padding="40" VerticalOptions="Center"
@@ -14,23 +15,25 @@
         <controls:RoundedEntry PlaceHolder="Industry" Text="{Binding Industry}"/>
         <controls:RoundedEntry PlaceHolder="Qualification" Text="{Binding Qualification}"/>
         <Frame BackgroundColor="White" Padding="0"
-               CornerRadius="50">
+               CornerRadius="{ OnPlatform Android=50, iOS=20}">
             <DatePicker Date="{Binding DOB}"/>
         </Frame>
-        <StackLayout Orientation="Horizontal" Margin="0,50,0,0">
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,50,0,0">
             <CheckBox VerticalOptions="Center"/>
             <Label Text="I accept terms and condtion" VerticalOptions="Center"/>
         </StackLayout>
 
-        <Button Text="SING UP" Command="{Binding SignUpCommand}"
+        <Button Text="SIGN UP" Command="{Binding SignUpCommand}"
                     BackgroundColor="{StaticResource HsGreen}" Margin="60,60,60,0"
-                    CornerRadius="30"
+                    CornerRadius="{ OnPlatform Android=30, iOS=20}"
                     TextColor="White"/>
-        <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
-              Margin="0,60,0,0" VerticalOptions="End">
-            <Frame Grid.Column="0" BackgroundColor="Red" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="1" BackgroundColor="Yellow" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>
-        </Grid>
+        <forms:SvgCachedImage
+            Aspect="AspectFit"
+            Source="Icon.svg"
+            DownsampleToViewSize="True"
+            HeightRequest="15"
+            WidthRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"></forms:SvgCachedImage>
     </StackLayout>
 </ContentPage>

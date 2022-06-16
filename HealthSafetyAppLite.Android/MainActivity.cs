@@ -4,6 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
 
 namespace HealthSafetyAppLite.Droid
 {
@@ -13,7 +14,7 @@ namespace HealthSafetyAppLite.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            CachedImageRenderer.Init(true);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

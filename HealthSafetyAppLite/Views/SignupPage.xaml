@@ -19,15 +19,17 @@
 
         <Button Text="Next" Command="{Binding SecondSignupPageCommand}"
                     BackgroundColor="{StaticResource HsGreen}" Margin="0,60,0,0"
-                    CornerRadius="20"
+                    CornerRadius="{ OnPlatform Android=30, iOS=20}"
                      FontAttributes="Bold"
                     TextColor="White"/>
-          <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
-              Margin="0,30,0,0">
-            <Frame Grid.Column="0" BackgroundColor="Red" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="1" BackgroundColor="Yellow" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>
-        </Grid>
+          <forms:SvgCachedImage
+            Aspect="AspectFit"
+            Source="Icon.svg"
+            DownsampleToViewSize="True"
+            HeightRequest="15"
+            WidthRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"></forms:SvgCachedImage>
     </StackLayout>
    
 </ContentPage>

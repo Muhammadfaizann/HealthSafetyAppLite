@@ -2,7 +2,7 @@
 <Frame xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HealthSafetyAppLite.Controls.RoundedEntry"
-       Padding="0" CornerRadius="50"
+       Padding="0" CornerRadius="{ OnPlatform Android=50, iOS=20}"
        HeightRequest="40" x:Name="frame"
        BackgroundColor="White">
     <Entry x:Name="txt" Margin="10"

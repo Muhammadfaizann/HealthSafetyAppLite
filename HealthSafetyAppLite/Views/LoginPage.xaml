@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:HealthSafetyAppLite.ViewModels"
              xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              BackgroundImage="background.png"
              x:Class="HealthSafetyAppLite.Views.LoginPage">
-    <StackLayout Padding="40,80,40,40" VerticalOptions="Start"
+    <StackLayout Padding="40,80,40,40" VerticalOptions="Center" 
                      HorizontalOptions="FillAndExpand" x:DataType="vm:LoginViewModel">
         <Label Text="Hello" FontSize="40" HorizontalOptions="Start"
                FontFamily="PoppinsBold" TextColor="{StaticResource HsGreen}"
@@ -21,8 +22,9 @@
             <Label Text="Forgot your password?" TextColor="{StaticResource HsBlack}"
                HorizontalOptions="End"/>
         </StackLayout>
+
         <StackLayout Margin="0,40,0,0">
-            <Button BackgroundColor="{StaticResource HsGreen}" Text="SIGN IN" CornerRadius="30"
+            <Button BackgroundColor="{StaticResource HsGreen}" Text="SIGN IN" CornerRadius="{ OnPlatform Android=30, iOS=20}"
                     HorizontalOptions="CenterAndExpand" WidthRequest="120" TextColor="White"
                     HeightRequest="40" Command="{Binding LogInCommand}"/>
             <Label HorizontalOptions="Center" Margin="0,20,0,0">
@@ -38,12 +40,14 @@
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-        </StackLayout>
-        <Grid ColumnDefinitions="25,25,25" HorizontalOptions="Center" RowDefinitions="25" 
-              Margin="0,30,0,0">
-            <Frame Grid.Column="0" BackgroundColor="Red" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="1" BackgroundColor="Yellow" CornerRadius="50"  ></Frame>
-            <Frame Grid.Column="2" BackgroundColor="Green" CornerRadius="50" ></Frame>
-        </Grid>
+        </StackLayout> 
+        <forms:SvgCachedImage
+            Aspect="AspectFit"
+            Source="Icon.svg"
+            DownsampleToViewSize="True"
+            HeightRequest="15"
+            WidthRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="End"></forms:SvgCachedImage>
     </StackLayout>
 </ContentPage>
