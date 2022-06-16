@@ -11,13 +11,13 @@
         <Label Text="Hello" FontSize="40" HorizontalOptions="Start"
                FontFamily="PoppinsBold" TextColor="{StaticResource HsGreen}"
                FontAttributes="Bold"/>
-        <Label Text="Sign in to your account" TextColor="{StaticResource HsBlack}"
+        <Label Text="Sign in to your account." TextColor="{StaticResource HsBlack}"
                FontFamily="PoppinsRegular"/>
         <StackLayout>
             <controls:RoundedEntry Margin="0,40,0,0" VerticalOptions="Center" 
                                    PlaceHolder="Email"
                                    Text="{Binding UserName}"/>
-            <controls:RoundedEntry Margin="0,20,0,0" PlaceHolder="Password"
+            <controls:RoundedEntry Margin="0,20,0,0" PlaceHolder="Password" IsPassword="True"
                                    Text="{Binding Password}"/>
             <Label Text="Forgot your password?" TextColor="{StaticResource HsBlack}"
                HorizontalOptions="End"/>
