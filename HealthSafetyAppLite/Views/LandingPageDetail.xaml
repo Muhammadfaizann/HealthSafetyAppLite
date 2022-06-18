@@ -2,30 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HealthSafetyAppLite.Views.LandingPageDetail"
+             xmlns:controls="clr-namespace:HealthSafetyAppLite.Controls"
              xmlns:fontAwesome="clr-namespace:HealthSafetyAppLite.FontAwesomeIcons"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              Title="Health and Safety topics"
-             NavigationPage.HasBackButton="False"
-             NavigationPage.HasNavigationBar="False"
-             ios:Page.UseSafeArea="True"
-             BackgroundImage="background.png">
-           <Grid
+            BackgroundImageSource="background.png"
+            
+             >
+    <!--<Grid
               x:Name="GridTop"
                HorizontalOptions="Fill"
                 BackgroundColor="Red"
                 VerticalOptions="Start">
-            <Grid Margin="20,0,0,0" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="Start">
-                <Image HorizontalOptions="Start" IsEnabled="False">
-                    <Image.Source>
-                        <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Bars}" Size="Large" Color="White">
-                        </FontImageSource>
-                    </Image.Source>
-                </Image>
-            </Grid>
-            <Label Text="Health and Safety topics" HorizontalOptions="Center" FontFamily="PoppinsBold" VerticalOptions="Center" TextColor="White"></Label>
-           </Grid>
-            
-        
-        
-   
+        <Grid Margin="20,0,0,0" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="Start">
+            <Image HorizontalOptions="Start" IsEnabled="False">
+                <Image.Source>
+                    <FontImageSource FontFamily="FontAwesomeSolid" Glyph="{x:Static fontAwesome:FontAwesomeIcons.Bars}" Size="Large" Color="White">
+                    </FontImageSource>
+                </Image.Source>
+            </Image>
+        </Grid>
+        <Label Text="Health and Safety topics" HorizontalOptions="Center" FontFamily="PoppinsBold" VerticalOptions="Center" TextColor="White"></Label>
+    </Grid>-->
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto"
+          ColumnDefinitions="*,*"
+          Padding="40,60"
+          ColumnSpacing="20"
+          RowSpacing="20">
+        <controls:MenuButton Text="Dynamic Assessment Tool"
+                             Grid.Row="0"
+                             Grid.Column="0"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Cash Assessment Tool"
+                             Grid.Column="1"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Work Station Assessment Tool"
+                             Grid.Row="1"
+                             Grid.Column="0"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Manual Handling Risk Assessment Tool"
+                             Grid.Row="1"
+                             Grid.Column="1"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Accident Record Form Tool"
+                             Grid.Row="2"
+                             Grid.Column="0"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Safe System of Work Tool"
+                             Grid.Row="2"
+                             Grid.Column="1"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="Audit Form Tool"
+                             Grid.Row="3"
+                             Grid.Column="0"
+                             Image="icon.svg"/>
+        <controls:MenuButton Text="ToolBox Talks"
+                             Grid.Row="3"
+                             Grid.Column="1"
+                             Image="icon.svg"/>
+
+
+    </Grid>
 </ContentPage>

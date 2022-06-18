@@ -14,6 +14,7 @@
         <Color x:Key="HsYellow">#F4F212</Color>
         <Color x:Key="HsLightGray">#E3E3E3</Color>
         <Color x:Key="HsDarkGray">#C1C1C1</Color>
+        <Color x:Key="HsBackground">#E3E3E3</Color>
 
         
     </Application.Resources>
