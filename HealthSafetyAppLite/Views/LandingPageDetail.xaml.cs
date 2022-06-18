@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace HealthSafetyAppLite.Views
@@ -15,8 +16,11 @@ namespace HealthSafetyAppLite.Views
     {
         public LandingPageDetail()
         {
+        
             InitializeComponent();
             this.BindingContext = new LandingPageViewModel(Navigation);
         }
+        
+        
     }
 }

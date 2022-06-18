@@ -13,10 +13,21 @@
   <ItemGroup>
     <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
     <None Remove="Xamarin.FFImageLoading.Svg.Forms" />
+    <None Remove="FontAwesomeIcons\" />
+    <None Remove="Resources\Fonts\PoppinsLight.ttf" />
+    <None Remove="Resources\Fonts\PoppinsItalic.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Bold.ttf" />
+    <None Remove="Resources\Fonts\FontAwesome5Regular.otf" />
+    <None Remove="Resources\Fonts\FontAwesome5Brand.otf" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Fonts\Poppins-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Poppins-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Poppins-Italic.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Poppins-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\FontAwesomeRegular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\FontAwesomeBrand.otf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,5 +59,8 @@
     <EmbeddedResource Update="Views\SignupPageSecond.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FontAwesomeIcons\" />
   </ItemGroup>
 </Project>
